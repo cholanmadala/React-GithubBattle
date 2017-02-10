@@ -1,20 +1,31 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Friends from './Friends';
 
-
-/*class HelloWorld extends React.component{
+//ES6 way of writing React js
+class HelloWorld extends React.Component{
+	constructor(){
+		super();
+		this.friends = ['Krishna Teja', 'Kamesh', 'Swap', 'Anil', 'Vamsi', 'Manikanta'];
+	}
 	render(){
 		return (
-				<div>Hello World! This is my first complete React app I developed </div>
+			<div>
+				<div>Hello World! This is {this.props.name} </div>
+				<Friends friendsList = {this.friends} />
+			</div>
 			)
 	}
-};*/
+};
 
+/*
+//Normal way of writing react
 var HelloWorld = React.createClass({
 	render: function() {
 		return ( < div >
-			Hello World!This is my first complete React app from scratch. < /div>
+			Hello World!This is {this.props.name}. < /div>
 		)
 	}
-});
-ReactDOM.render( < HelloWorld / > , document.getElementById('app'));
+});*/
+
+ReactDOM.render( <HelloWorld name="Madala Cholan Satyanarayana"/ > , document.getElementById('app'));

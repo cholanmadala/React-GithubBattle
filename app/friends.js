@@ -18,5 +18,4 @@ class Friends extends React.Component {
 	}
 
 }
-
 export default Friends;

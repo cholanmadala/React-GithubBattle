@@ -1,41 +1,59 @@
 import React from 'react';
+import Prompt from '../components/Prompt';
 
 class PromptContainer extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			username: ''
+		};
+		this.handleSubmitUser = this.handleSubmitUser.bind(this);
+		this.handleChangeUser = this.handleChangeUser.bind(this);
+	}
 
-constructor () {
-	super();
+	handleSubmitUser(e) {
+		e.preventDefault();
+		let username = this.state.username;
+		this.setState({
+			username: ''
+		});
 
+		if (this.props.routeParams.playerone) {
+			//go to Battle route
+			this.context.router.push({
+				pathname: '/battle',
+				query: {
+					playerOne: this.props.routeParams.playerone,
+					playerTwo: this.state.username
+				}
+			})
+		} else {
+			//go to playerTwo route
+			this.context.router.push('/playerTwo/' + this.state.username);
+		}
+
+	}
+	handleChangeUser(e) {
+		this.setState({
+			username: e.target.value
+		});
+	}
+	render() {
+		return (
+			<Prompt
+				header={this.props.route.header}
+				onChangeUser={this.handleChangeUser}
+				onSubmitUser={this.handleSubmitUser}
+				username={this.state.username}
+			/>
+		);
+	}
+};
+
+PromptContainer.contextTypes = {
+	router: React.PropTypes.object.isRequired
 }
-render() {
-	console.log(this);
-	return (
-		<div className='jumbotron col-sm-6 col-sm-offset-3 text-center'>
-			<h1>Header here</h1>
-			<div className="col-sm-12">
-				<form>
-					<div className="form-group">
-						<input
-							className="form-control"
-							placeholder='github username'
-							type='text'
-							/>
-					</div>
-					<div className='form-group col-sm-4 col-sm-offset-4'>
-						<button className='btn btn-block btn-success' type='submit'>
-							Continue
-						</button>
 
-					</div>
-				</form>
-
-			</div>
-
-		</div>
-
-	);
-}
-
-}
 module.exports = PromptContainer;
 
 // export default PromptContainer;

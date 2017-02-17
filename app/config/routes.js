@@ -12,15 +12,14 @@ var Doctor = require("../components/Doctor");
 var Politician = require("../components/Politician");
 var PromptContainer = require("../containers/PromptContainer");
 
-console.log(hashHistory);
 var routes = (
   <Router history={hashHistory}>
     <Route path='/' component={Main}>
       <IndexRoute component={Home} />
       <Route path='Author' component={Author}/>
       <Route path='Doctor' component={Doctor}/>
-      <Route path='playerone' header='Player One' component={PromptContainer}/>
-      <Route path='playertwo/:playerone' header='Player Two' component={PromptContainer}/>
+      <Route path='playerOne' header='Player One' component={PromptContainer}/>
+      <Route path='playerTwo/:playerOne' header='Player Two' component={PromptContainer}/>
       <Route path='Politician' component={Politician}/>
     </Route>
   </Router>

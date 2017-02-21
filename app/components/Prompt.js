@@ -28,5 +28,9 @@ Prompt.propTypes ={
 	onChangeUser: PropTypes.func.isRequired,
 	username: PropTypes.string.isRequired,
 }
+Prompt.defaultProps = {
+	header:'Some Basic Header',
+	username: 'cholanmadala'
+}
 
 export default Prompt;

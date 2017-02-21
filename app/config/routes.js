@@ -11,6 +11,7 @@ var Player = require("../components/Player");
 var Doctor = require("../components/Doctor");
 var Politician = require("../components/Politician");
 var PromptContainer = require("../containers/PromptContainer");
+var ConfirmBattleContainer = require('../containers/ConfirmBattleContainer');
 
 var routes = (
   <Router history={hashHistory}>
@@ -20,6 +21,7 @@ var routes = (
       <Route path='Doctor' component={Doctor}/>
       <Route path='playerOne' header='Player One' component={PromptContainer}/>
       <Route path='playerTwo/:playerOne' header='Player Two' component={PromptContainer}/>
+      <Route path='battle' component={ConfirmBattleContainer}/>
       <Route path='Politician' component={Politician}/>
     </Route>
   </Router>

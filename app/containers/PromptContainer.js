@@ -12,18 +12,19 @@ class PromptContainer extends React.Component {
 	}
 
 	handleSubmitUser(e) {
+		console.log(e);
 		e.preventDefault();
 		let username = this.state.username;
 		this.setState({
 			username: ''
 		});
 
-		if (this.props.routeParams.playerone) {
-			//go to Battle route
+		if (this.props.routeParams.playerOne) {
+			console.log('go to Battle route');
 			this.context.router.push({
 				pathname: '/battle',
 				query: {
-					playerOne: this.props.routeParams.playerone,
+					playerOne: this.props.routeParams.playerOne,
 					playerTwo: this.state.username
 				}
 			})

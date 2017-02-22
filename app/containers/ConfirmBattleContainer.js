@@ -9,6 +9,7 @@ class ConfirmBattleContainer extends React.Component {
 			isLoading : true,
 			playersInfo : []
 		};
+		this.handleInitiateBattle=this.handleInitiateBattle.bind(this);
 	}
 	componentDidMount () {
 		let query = this.props.location.query;
@@ -22,10 +23,20 @@ class ConfirmBattleContainer extends React.Component {
 		}.bind(this));
 
 	}
+	handleInitiateBattle () {
+		console.log('handleInitiateBattle');
+		this.context.router.push({
+			pathname: '/results',
+			state: {
+				playersInfo: this.state.playersInfo
+			}
+		})
+	}
 	render () {
 		return (
 			<Confirm
 				isLoading={this.state.isLoading}
+				onInitiateBattle = {this.handleInitiateBattle}
 				playersInfo={this.state.playersInfo}
 			/>
 			)

@@ -23,6 +23,7 @@ var routes = (
       <Route path='playerTwo/:playerOne' header='Player Two' component={PromptContainer}/>
       <Route path='battle' component={ConfirmBattleContainer}/>
       <Route path='Politician' component={Politician}/>
+      <Route path='results' component={Politician}/>
     </Route>
   </Router>
 );

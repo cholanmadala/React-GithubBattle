@@ -2,7 +2,6 @@ import React from 'react';
 import styles from '../styles';
 var ReactRouter = require('react-router');
 import UserDetails from './UserDetails';
-
 var Link = ReactRouter.Link;
 
 function puke(object) {
@@ -22,12 +21,10 @@ class Confirm extends React.Component {
 				 		<h1>Confirm Players</h1>
 				 		<div className='col-sm-8 col-sm-offset-2'>
 				 			<div className='col-sm-6'>
-					 			<p className='lead'> Player One</p>
-					 				<UserDetails score={55} info={this.props.playersInfo[0]}/>
+					 				<UserDetails header={'Player One'}  info={this.props.playersInfo[0]}/>
 				 			</div>
 				 			<div className='col-sm-6'>
-					 			<p className='lead'> Player Two</p>
-					 				<UserDetails score={25} info={this.props.playersInfo[1]}/>
+					 				<UserDetails header={'Player Two'}  info={this.props.playersInfo[1]}/>
 				 			</div>
 				 		</div>
 				 		<div className='col-sm-8 col-sm-offset-2'>

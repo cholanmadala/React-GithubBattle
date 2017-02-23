@@ -19,7 +19,7 @@ class PromptContainer extends React.Component {
 			username: ''
 		});
 
-		if (this.props.routeParams.playerOne) {
+		if (this.props.routeParams.playerOne && this.state.username) {
 			console.log('go to Battle route');
 			this.context.router.push({
 				pathname: '/battle',

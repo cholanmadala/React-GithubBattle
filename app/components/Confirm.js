@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../styles';
+import Loading from './Loading';
 var ReactRouter = require('react-router');
 import UserDetails from './UserDetails';
 var Link = ReactRouter.Link;
@@ -16,7 +17,7 @@ class Confirm extends React.Component {
 	render () {
 		return (
 				this.props.isLoading ?
-				 <p>Loading.... Loading... Loading</p>
+				 <Loading text={'Getting Data'} />
 				 :  <div className= 'jumbotron col-sm-12 text-center' style={styles.transparentBg}>
 				 		<h1>Confirm Players</h1>
 				 		<div className='col-sm-8 col-sm-offset-2'>

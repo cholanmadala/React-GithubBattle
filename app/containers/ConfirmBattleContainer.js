@@ -15,7 +15,7 @@ class ConfirmBattleContainer extends React.Component {
 		let query = this.props.location.query;
 		let that = this;
 		//Fetch data from GitHub and update the state
-		helpers.gerPlayersInfo([query.playerOne, query.playerTwo]).then(function (players){
+		helpers.getPlayersInfo([query.playerOne, query.playerTwo]).then(function (players){
 			this.setState({
 				isLoading: false,
 				playersInfo: [players[0], players[1]]
@@ -24,7 +24,6 @@ class ConfirmBattleContainer extends React.Component {
 
 	}
 	handleInitiateBattle () {
-		console.log('handleInitiateBattle');
 		this.context.router.push({
 			pathname: '/results',
 			state: {

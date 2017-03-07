@@ -22,6 +22,8 @@ function Prompt (props) {
 	)
 };
 
+
+
 Prompt.propTypes ={
 	header: PropTypes.string.isRequired,
 	onSubmitUser: PropTypes.func.isRequired,

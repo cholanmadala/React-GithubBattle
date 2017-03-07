@@ -4,6 +4,12 @@ var styles = {
 	},
 	space: {
 		marginTop: '20px'
+	},
+	loading: {
+		fontSize : '20px',
+		fontWeight : 'bold',
+		textAlign : 'center',
+		margin : '0 auto'
 	}
 }
 

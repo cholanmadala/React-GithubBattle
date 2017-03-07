@@ -19,7 +19,6 @@ class PromptContainer extends React.Component {
 		});
 
 		if (this.props.routeParams.playerOne && this.state.username) {
-			console.log('go to Battle route');
 			this.context.router.push({
 				pathname: '/battle',
 				query: {
@@ -38,6 +37,9 @@ class PromptContainer extends React.Component {
 			username: e.target.value
 		});
 	}
+	componentWillUpdate (nextProps, nextState){
+		console.log('nextProps', nextProps);
+	}
 	render() {
 		return (
 			<Prompt
@@ -49,6 +51,7 @@ class PromptContainer extends React.Component {
 		);
 	}
 };
+
 
 PromptContainer.contextTypes = {
 	router: React.PropTypes.object.isRequired
